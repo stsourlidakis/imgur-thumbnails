@@ -1,0 +1,29 @@
+{
+  "name": "imgur-thumbnails",
+  "version": "1.0.0",
+  "description": "Create thumbnail urls for images hosted on imgur",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stsourlidakis/imgur-thumbnails.git"
+  },
+  "keywords": [
+    "imgur",
+    "image",
+    "thumbnail",
+    "url"
+  ],
+  "author": "Stavros Tsourlidakis <'s.tsourlidakis@hotmail.com'>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stsourlidakis/imgur-thumbnails/issues"
+  },
+  "homepage": "https://github.com/stsourlidakis/imgur-thumbnails#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  }
+}
