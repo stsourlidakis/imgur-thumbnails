@@ -1,19 +1,19 @@
-module.exports.thumbnailSmall = function(url){
+module.exports.small = function(url){
 	return addChar(url, 's');
 }
-module.exports.thumbnailBig = function(url){
+module.exports.big = function(url){
 	return addChar(url, 'b');
 }
-module.exports.thumbnailSmallT = function(url){
+module.exports.smallT = function(url){
 	return addChar(url, 't');
 }
-module.exports.thumbnailMedium = function(url){
+module.exports.medium = function(url){
 	return addChar(url, 'm');
 }
-module.exports.thumbnailLarge = function(url){
+module.exports.large = function(url){
 	return addChar(url, 'l');
 }
-module.exports.thumbnailHuge = function(url){
+module.exports.huge = function(url){
 	return addChar(url, 'h');
 }
 
@@ -22,22 +22,22 @@ module.exports.thumbnail = function(url, size){
 	switch(size){
 		case 's':
 		case 'small':
-			return module.exports.thumbnailSmall(url);
+			return module.exports.small(url);
 		case 'b':
 		case 'big':
-			return module.exports.thumbnailBig(url);
+			return module.exports.big(url);
 		case 't':
 		case 'smallT':
-			return module.exports.thumbnailSmallT(url);
+			return module.exports.smallT(url);
 		case 'm':
 		case 'medium':
-			return module.exports.thumbnailMedium(url);
+			return module.exports.medium(url);
 		case 'l':
 		case'large':
-			return module.exports.thumbnailLarge(url);
+			return module.exports.large(url);
 		case 'h':
 		case 'huge':
-			return module.exports.thumbnailHuge(url);
+			return module.exports.huge(url);
 		default:
 			throw new Error('Invalid size argument');
 	}

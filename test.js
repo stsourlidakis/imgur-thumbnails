@@ -8,9 +8,9 @@ const	input = 'https://i.imgur.com/zXSTP7j.png',
 		sizes = ['s', 'small', 'b', 'big', 't', 'smallT', 'm', 'medium', 'l', 'large', 'h', 'huge'];
 		
 describe('imgurThumbnail', function(){
-	describe('thumbnailSmall', function(){
+	describe('small', function(){
 		const	size = 's',
-				result = imgurThumbnail.thumbnailSmall(input)
+				result = imgurThumbnail.small(input)
 		it('Result should be a string', function(){
 			expect(result).be.a('string');
 		});
@@ -27,13 +27,13 @@ describe('imgurThumbnail', function(){
 			expect(result).to.contain(size+'.'+inputExtension);
 		});
 		it('Should throw an error when the input doesn\'t contain a dot', function(){
-			expect(imgurThumbnail.thumbnailSmall.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
+			expect(imgurThumbnail.small.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
 		});
 	});
 	
-	describe('thumbnailBig', function(){
+	describe('big', function(){
 		const	size = 'b';
-				result = imgurThumbnail.thumbnailBig(input);
+				result = imgurThumbnail.big(input);
 		it('Result should be a string', function(){
 			expect(result).be.a('string');
 		});
@@ -50,13 +50,13 @@ describe('imgurThumbnail', function(){
 			expect(result).to.contain(size+'.'+inputExtension);
 		});
 		it('Should throw an error when the input doesn\'t contain a dot', function(){
-			expect(imgurThumbnail.thumbnailBig.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
+			expect(imgurThumbnail.big.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
 		});
 	});
 	
-	describe('thumbnailSmallT', function(){
+	describe('smallT', function(){
 		const	size = 't',
-				result = imgurThumbnail.thumbnailSmallT(input);
+				result = imgurThumbnail.smallT(input);
 		it('Result should be a string', function(){
 			expect(result).be.a('string');
 		});
@@ -73,13 +73,13 @@ describe('imgurThumbnail', function(){
 			expect(result).to.contain(size+'.'+inputExtension);
 		});
 		it('Should throw an error when the input doesn\'t contain a dot', function(){
-			expect(imgurThumbnail.thumbnailSmallT.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
+			expect(imgurThumbnail.smallT.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
 		});
 	});
 	
-	describe('thumbnailMedium', function(){
+	describe('medium', function(){
 		const 	size = 'm',
-				result = imgurThumbnail.thumbnailMedium(input);
+				result = imgurThumbnail.medium(input);
 		it('Result should be a string', function(){
 			expect(result).be.a('string');
 		});
@@ -96,13 +96,13 @@ describe('imgurThumbnail', function(){
 			expect(result).to.contain(size+'.'+inputExtension);
 		});
 		it('Should throw an error when the input doesn\'t contain a dot', function(){
-			expect(imgurThumbnail.thumbnailMedium.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
+			expect(imgurThumbnail.medium.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
 		});
 	});
 	
-	describe('thumbnailLarge', function(){
+	describe('large', function(){
 		const	size = 'l',
-				result = imgurThumbnail.thumbnailLarge(input);
+				result = imgurThumbnail.large(input);
 		it('Result should be a string', function(){
 			expect(result).be.a('string');
 		});
@@ -119,13 +119,13 @@ describe('imgurThumbnail', function(){
 			expect(result).to.contain(size+'.'+inputExtension);
 		});
 		it('Should throw an error when the input doesn\'t contain a dot', function(){
-			expect(imgurThumbnail.thumbnailLarge.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
+			expect(imgurThumbnail.large.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
 		});
 	});
 	
-	describe('thumbnailHuge', function(){
+	describe('huge', function(){
 		const	size = 'h',
-				result = imgurThumbnail.thumbnailHuge(input);
+				result = imgurThumbnail.huge(input);
 		it('Result should be a string', function(){
 			expect(result).be.a('string');
 		});
@@ -142,7 +142,7 @@ describe('imgurThumbnail', function(){
 			expect(result).to.contain(size+'.'+inputExtension);
 		});
 		it('Should throw an error when the input doesn\'t contain a dot', function(){
-			expect(imgurThumbnail.thumbnailHuge.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
+			expect(imgurThumbnail.huge.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
 		});
 	});
 
@@ -164,7 +164,7 @@ describe('imgurThumbnail', function(){
 				expect(imgurThumbnail.thumbnail(input, size)).to.contain(size.charAt(0)+'.'+inputExtension);
 			});
 			it('Should throw an error when the input doesn\'t contain a dot', function(){
-				expect(imgurThumbnail.thumbnailHuge.bind(imgurThumbnail, invalidInput, size)).to.throw('Invalid URL');
+				expect(imgurThumbnail.huge.bind(imgurThumbnail, invalidInput, size)).to.throw('Invalid URL');
 			});
 		});
 	}
