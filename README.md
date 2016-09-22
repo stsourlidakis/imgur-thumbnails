@@ -1,6 +1,12 @@
 # imgur-thumbnails
 A simple node module that creates [thumbnail](https://api.imgur.com/models/image#thumbs) urls for images hosted on imgur.
 
+## Installation
+------------
+```bash
+npm install imgur-thumbnails
+```
+
 ## Usage
 -----
 ```js
