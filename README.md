@@ -13,23 +13,31 @@ npm install imgur-thumbnails
 const thumbnails = require('imgur-thumbnails'),
       url = 'http://i.imgur.com/12345.jpg';
 
-thumbnails.small(url)
+thumbnails.small(url);
 // => "http://i.imgur.com/12345s.jpg"    
 
-thumbnails.big(url)
+thumbnails.big(url);
 // => "http://i.imgur.com/12345b.jpg"
 
-thumbnails.medium(url)
+thumbnails.medium(url);
 // => "http://i.imgur.com/12345m.jpg"
 
-thumbnails.thumbnail(url, 'small')
+thumbnails.thumbnail(url, 'small');
 // => "http://i.imgur.com/12345s.jpg"
 
-thumbnails.thumbnail(url, 's')
+thumbnails.thumbnail(url, 's');
 // => "http://i.imgur.com/12345s.jpg"
 
-thumbnails.thumbnail(url)
+thumbnails.thumbnail(url);
 // => "http://i.imgur.com/12345m.jpg"
+
+let urlSmall = thumbnails.small(url);
+
+thumbnails.isThumbnail(urlSmall);
+// => true
+
+thumbnails.original(urlSmall);
+// => 'http://i.imgur.com/12345.jpg';
 ```
     
 ## imgur-thumbnails Functions
@@ -41,3 +49,5 @@ thumbnails.thumbnail(url)
 * `large(url)`
 * `huge(url)`
 * `thumbnail(url, size)`
+* `isThumbnail(url)`
+* `original(url)`
