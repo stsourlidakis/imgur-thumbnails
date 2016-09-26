@@ -196,7 +196,7 @@ describe('imgurThumbnail', function(){
 		});
 	});
 	
-		
+	
 	describe('isThumbnail(url)', function(){
 		it('Should return a boolean', function(){
 			expect(imgurThumbnail.isThumbnail(input)).to.a('boolean');
@@ -209,6 +209,25 @@ describe('imgurThumbnail', function(){
 		}
 		it('Should return false for a normal url', function(){
 			expect(imgurThumbnail.isThumbnail(input)).eql(false);
+		});
+	});
+	
+	describe('original(url)', function(){
+		it('Result should be a string', function(){
+			expect(imgurThumbnail.original(input)).be.a('string');
+		});
+		for(let i=0, n=sizes.length, thumbnailInput; i<n; i+=2){
+			thumbnailInput = imgurThumbnail.thumbnail(input, sizes[i]);
+			
+			it('Result should be a character shorter for a '+sizes[i+1]+' thumbnail url', function(){
+				expect(imgurThumbnail.original(thumbnailInput)).to.have.lengthOf(thumbnailInput.length-1);
+			});
+			it('Should return the original url for a '+sizes[i+1]+' thumbnail url', function(){
+				expect(imgurThumbnail.original(thumbnailInput)).equal(input);
+			});
+		}
+		it('Should throw an error when the input doesn\'t contain a dot', function(){
+			expect(imgurThumbnail.original.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
 		});
 	});
 });

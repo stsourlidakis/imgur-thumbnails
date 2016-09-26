@@ -56,6 +56,18 @@ module.exports.isThumbnail = function(url){
 	}
 }
 
+module.exports.original = function(url){
+	const i = url.lastIndexOf('.');
+	if (i != -1) {
+		if( module.exports.isThumbnail(url) )
+			return url.slice(0, i-1) + url.slice(i);
+		else
+			return url;
+	} else {
+		throw new Error('Invalid URL');
+	}
+}
+
 function addChar(url, char){
 	const i = url.lastIndexOf('.');
 	if (i != -1) {
