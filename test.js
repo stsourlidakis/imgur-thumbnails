@@ -195,4 +195,20 @@ describe('imgurThumbnail', function(){
 			expect(imgurThumbnail.thumbnail.bind(imgurThumbnail, invalidInput)).to.throw('Invalid URL');
 		});
 	});
+	
+		
+	describe('isThumbnail(url)', function(){
+		it('Should return a boolean', function(){
+			expect(imgurThumbnail.isThumbnail(input)).to.a('boolean');
+		});
+		for(let i=0, n=sizes.length, thumbnailInput; i<n; i+=2){
+			it('Should return true for a '+sizes[i+1]+' thumbnail url', function(){
+				thumbnailInput = imgurThumbnail.thumbnail(input, sizes[i]);
+				expect(imgurThumbnail.isThumbnail(thumbnailInput)).eql(true);
+			});
+		}
+		it('Should return false for a normal url', function(){
+			expect(imgurThumbnail.isThumbnail(input)).eql(false);
+		});
+	});
 });

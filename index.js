@@ -43,6 +43,19 @@ module.exports.thumbnail = function(url, size){
 	}
 }
 
+module.exports.isThumbnail = function(url){
+	const i = url.lastIndexOf('.');
+	if (i != -1) {
+		const lastChar = url.charAt(i-1);
+		if( lastChar=='s' || lastChar=='b' || lastChar=='t' || lastChar=='m' || lastChar=='l' || lastChar=='h' )
+			return true;
+		else
+			return false;
+	} else {
+		return false;
+	}
+}
+
 function addChar(url, char){
 	const i = url.lastIndexOf('.');
 	if (i != -1) {
