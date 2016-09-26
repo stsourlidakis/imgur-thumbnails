@@ -1,3 +1,4 @@
+'use strict';
 const	expect = require('chai').expect,
 		imgurThumbnail = require('./index');
 
@@ -146,7 +147,7 @@ describe('imgurThumbnail', function(){
 		});
 	});
 
-	for (var size of sizes){
+	for (let size of sizes){
 		describe('thumbnail(url, \''+size+'\')', function(){
 			it('Result should be a string', function(){
 				expect(imgurThumbnail.thumbnail(input, size)).be.a('string');
@@ -161,7 +162,7 @@ describe('imgurThumbnail', function(){
 				}
 			});
 			it('Result should have the size character followed by the extension', function(){
-				expect(imgurThumbnail.thumbnail(input, size)).to.contain(size.charAt(0)+'.'+inputExtension);
+				expect(imgurThumbnail.thumbnail(input, size)).to.contain((size!='smallT'?size.charAt(0):'t')+'.'+inputExtension);
 			});
 			it('Should throw an error when the input doesn\'t contain a dot', function(){
 				expect(imgurThumbnail.huge.bind(imgurThumbnail, invalidInput, size)).to.throw('Invalid URL');
